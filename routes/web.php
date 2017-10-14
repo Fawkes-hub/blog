@@ -17,6 +17,7 @@
 
 
 Route::get('/test','IndexController@index');
+Route::get('/show','IndexController@show');
 
 
 //后台模版引入首页

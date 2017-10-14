@@ -68,7 +68,7 @@
                         </td>
                         <td class="tc">59</td>
                         <td>
-                            <a href="#">Apple iPhone 6 Plus (A1524) 16GB 金色 移动联通电信4G手机</a>
+                            <a href="#">国内新闻</a>
                         </td>
                         <td>0</td>
                         <td>2</td>
