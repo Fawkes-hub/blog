@@ -14,9 +14,7 @@ class IndexController extends CommonController
     public function index(){
         return view('admin.index');
     }
-    public function show(){
-        return 'aaaa';
-    }
+
     public function info(){
         return view('admin.info');
     }
@@ -42,8 +40,10 @@ class IndexController extends CommonController
                     //采用了调用数据库的密码，然后save的方法赋值进去了
                     $user->password=encrypt($input['password']);
                     $user->save();
+                    //密码修改成功
                     return back()->with('msg','A');
                 }else{
+                    //原密码错误
                     return back()->with('msg','B');
                 }
 

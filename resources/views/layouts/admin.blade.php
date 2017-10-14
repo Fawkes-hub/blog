@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="{{asset('resources/views/Admin/style/font/css/font-awesome.min.css')}}">
     <script type="text/javascript" src="{{asset('resources/views/Admin/style/js/jquery.js')}}"></script>
     <script type="text/javascript" src="{{asset('resources/views/Admin/style/js/ch-ui.admin.js')}}"></script>
+    {{--弹窗提醒--}}
+    <script type="text/javascript" src="{{asset('resources\org\layer\layer.js')}}"></script>
     {{--引入的错误提示信息--}}
     <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
     <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>

@@ -7,13 +7,39 @@
 <!--面包屑导航 结束-->
     @if(session('msg')=='A')
     <script>
-        alert('密码修改成功');
+        //layer.alert('密码修改成功', {icon: 6});
+        //边缘弹出
+        layer.open({
+            type: 1
+            ,offset: 't' //具体配置参考：offset参数项
+            ,content: '<div style="padding: 20px 80px;">密码修改成功</div>'
+            ,btn: '关闭'
+            ,btnAlign: 'c' //按钮居中
+            ,shade: 0 //不显示遮罩
+            ,yes: function(){
+                layer.closeAll();
+            }
+        });
     </script>
     @elseif(session('msg')=='B')
-        <script>
-            alert('原密码错误');
-        </script>
+    <script>
+       // layer.alert('原密码错误', {icon: 5});
+       //边缘弹出
+       layer.open({
+           type: 1
+           ,offset: 't' //具体配置参考：offset参数项
+           ,content: '<div style="padding: 20px 80px;">原密码错误</div>'
+           ,btn: '关闭'
+           ,btnAlign: 'c' //按钮居中
+           ,shade: 0 //不显示遮罩
+           ,yes: function(){
+               layer.closeAll();
+           }
+       });
+    </script>
     @endif
+
+
 <!--结果集标题与导航组件 开始-->
 <div class="result_wrap">
     <div class="result_title">

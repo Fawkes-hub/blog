@@ -4,7 +4,7 @@
     <!--面包屑导航 开始-->
     <div class="crumb_warp">
         <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
-        <i class="fa fa-home"></i> <a href="#">首页</a> &raquo; <a href="#">商品管理</a> &raquo; 添加商品
+        <i class="fa fa-home"></i> <a href="{{url('admin/info')}}">首页</a> &raquo; 分类列表
     </div>
     <!--面包屑导航 结束-->
 @section('daohang')
@@ -63,13 +63,14 @@
                     @foreach($data as $val)
                     <tr>
 
-                        <td class="tc"><input type="checkbox" name="id[]" value="59"></td>
-                        {{--<td class="tc">--}}
-                            {{--<input type="text" name="ord[]" value="0">--}}
-                        {{--</td>--}}
+
+                        <td class="tc">
+                            {{--this能够把自己的值传送--}}
+                            <input type="text" onchange="changeOrder(this,{{$val->cate_id}})" value="{{$val->cate_order}}" style="width: 40px">
+                        </td>
                         <td class="tc">{{$val->cate_id}}</td>
                         <td>
-                            <a href="#">{{$val->cate_name}}</a>
+                            <a href="#">{{$val->_cate_name}}</a>
                         </td>
                         <td>{{$val->cate_title}}</td>
                         <td>{{$val->cate_view}}</td>
@@ -118,7 +119,20 @@
         </div>
     </form>
     <!--搜索结果页面 列表 结束-->
-
+    <script>
+        function changeOrder(obj,cate_id) {
+            var cate_order=$(obj).val();
+            //url是在动作后请求的路径，{}内是传送的数据，func是给出的反应动作
+            // $.post('url',{},function (data) {  //
+       $.post("{{url('admin/cate/changeorder')}}",{'_token':'{{csrf_token()}}','cate_id':cate_id,'cate_order':cate_order},function (data) {
+           if(data.status==0){
+               layer.msg(data.msg, {icon: 6});
+           }else{
+               layer.msg(data.msg, {icon: 5});
+           }
+           });
+        }
+    </script>
 
 
 @endsection

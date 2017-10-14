@@ -17,7 +17,7 @@
 
 
 Route::get('/test','IndexController@index');
-Route::get('/show','IndexController@show');
+
 
 
 //后台模版引入首页
@@ -33,6 +33,9 @@ Route::middleware(['web','admin.login'])->prefix('admin')->namespace('Admin')->g
     Route::get('img', 'IndexController@img');
     Route::get('outlogin', 'LoginController@outlogin');
     Route::any('pass','IndexController@pass');
+    Route::post('cate/changeorder','CategoryController@changeOrder');
+
+    Route::resource('category','CategoryController');
 });
 Route::prefix('admin')->namespace('Admin')->group(function() {
     Route::any('login', 'LoginController@login');
