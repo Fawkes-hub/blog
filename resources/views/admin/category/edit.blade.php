@@ -3,7 +3,7 @@
     <!--面包屑导航 开始-->
     <div class="crumb_warp">
         <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
-        <i class="fa fa-home"></i> <a href="{{url('admin/info')}}">首页</a> &raquo;  添加分类列表
+        <i class="fa fa-home"></i> <a href="{{url('admin/info')}}">首页</a> &raquo;  修改分类列表
     </div>
     <!--面包屑导航 结束-->
 
@@ -62,9 +62,11 @@
 
 
     <div class="result_wrap">
-        <form action="{{url('admin/category')}}" method="post" id="commentForm">
+        <form action="{{url('admin/category/'.$cate->cate_id)}}" method="post" id="commentForm">
             <table class="add_tab">
                 {{csrf_field()}}
+                {{ method_field('PUT') }}
+
                 <tbody>
                     <tr>
                         <th width="120"><i class="require">*</i>父级分类：</th>
@@ -72,7 +74,12 @@
                             <select name="cate_pid">
                                 <option value="0">==顶级分类==</option>
                                 @foreach($data as $val)
-                                <option value="{{$val->cate_id}}">{{$val->cate_name}}</option>
+                                <option value="{{$val->cate_id}}"
+                                        {{--表示当分类的id等于等于了选项的父id，那么他就一定是子分类，就有父id就选中他--}}
+                                    @if($val->cate_id==$cate->cate_pid)
+                                        selected
+                                    @endif
+                                >{{$val->cate_name}}</option>
                                 @endforeach
                             </select>
                         </td>
@@ -81,34 +88,34 @@
                     <tr>
                         <th><i class="require">*</i>分类名称：</th>
                         <td>
-                            <input type="text" name="cate_name" data-rule-required="true">
+                            <input type="text" name="cate_name" required value="{{$cate->cate_name}}" data-rule-required="true">
                             <span><i class="fa fa-exclamation-circle yellow"></i>分类名称是必填项</span>
                         </td>
                     </tr>
                     <tr>
                         <th><i class="require">*</i>分类标题：</th>
                         <td>
-                            <input type="text" class="lg" name="cate_title" data-rule-required="true">
+                            <input type="text" class="lg" name="cate_title" required value="{{$cate->cate_title}}" data-rule-required="true">
 
                         </td>
                     </tr>
                     <tr>
                         <th>关键词：</th>
                         <td>
-                            <input type="text" name="cate_keywords">
+                            <input type="text" name="cate_keywords" value="{{$cate->cate_keywords}}">
 
                         </td>
                     </tr>
                     <tr>
                         <th>描述：</th>
                         <td>
-                            <textarea name="cate_description"></textarea>
+                            <textarea name="cate_description">{{$cate->cate_description}}</textarea>
                         </td>
                     </tr>
                     <tr>
                         <th><i class="require">*</i>排序：</th>
                         <td>
-                            <input type="text" class="sm" name="cate_order" data-rule-required="true" data-rule-digits="true">
+                            <input type="text" class="sm" name="cate_order" value="{{$cate->cate_order}}" data-rule-digits="true" data-rule-required="true">
                         </td>
                     </tr>
                     <tr>

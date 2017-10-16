@@ -96,7 +96,7 @@ class CategoryController extends CommonController
     //显示单个分类信息
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -109,7 +109,10 @@ class CategoryController extends CommonController
     //编辑单个分类
     public function edit($id)
     {
-        //
+        $cate=Category::find($id);
+
+        $data = Category::where('cate_pid',0)->get();
+        return view('admin/category/edit',compact('cate','data'));
     }
 
     /**
@@ -123,7 +126,14 @@ class CategoryController extends CommonController
     //修改单个分类
     public function update(Request $request, $id)
     {
-        //
+        $input=$request->except('_token','_method');
+        $re=Category::where('cate_id',$id)->update($input);
+        if($re){
+            return redirect('admin/category');
+        }else{
+            return back()->with('msg','B');
+        }
+
     }
 
     /**
@@ -137,5 +147,19 @@ class CategoryController extends CommonController
     public function destroy($id)
     {
         //
+       $re=Category::where('cate_id',$id)->delete();
+            Category::where('cate_pid',$id)->update(['cate_pid'=>0]);
+       if($re){
+           $data=[
+             'status'=>0,
+             'msg' => '分类删除成功',
+           ];
+       }else{
+           $data=[
+               'status'=>1,
+               'msg' => '删除失败，请稍候重试',
+           ];
+       }
+       return $data;
     }
 }
