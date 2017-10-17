@@ -56,14 +56,13 @@
 
                         {{--<th class="tc" width="5%">排序</th>--}}
                         <th class="tc" width="5%">ID</th>
-                        <th class="tc" width="">分类名称</th>
-                        <th width="20%">文章标题</th>
-                        <th width="">作者</th>
-                        <th width="">文章描述</th>
-                        <th width="">封面缩略图</th>
-                        <th width="">主要内容</th>
-                        <th width="">发布时间</th>
-
+                        {{--<th class="tc" width="">分类名称</th>--}}
+                        <th >文章标题</th>
+                        <th width="10%">作者</th>
+                        {{--<th width="">文章描述</th>--}}
+                        {{--<th width="">封面缩略图</th>--}}
+                        {{--<th width="">主要内容</th>--}}
+                        <th width="10%">发布时间</th>
                         <th width="8%">查看次数</th>
                         <th width="10%">操作</th>
                     </tr>
@@ -75,17 +74,16 @@
                             {{--this能够把自己的值传送--}}
                             {{--<input type="text" onchange="changeOrder(this,{{$val->cate_id}})" value="{{$val->cate_order}}" style="width: 40px">--}}
                         {{--</td>--}}
-                        <td class="tc">{{$val->cate_id}}</td>
-                        <td class="tc">{{$val->cate_id}}</td>
+                        <td class="tc">{{$val->art_id}}</td>
+                        {{--<td class="tc">{{$val->cate_id}}</td>--}}
                         <td>
                             <a href="#">{{$val->art_title}}</a>
                         </td>
-                        <td>{{$val->art_description}}</td>
-                        <td>{{$val->art_thumb}}</td>
-                        <td>{{$val->art_content}}</td>
-                        <td>{{$val->at_time}}</td>
-
+                        {{--<td>{{$val->art_description}}</td>--}}
+                        {{--<td>{{$val->art_thumb}}</td>--}}
+                        {{--<td>{{$val->art_content}}</td>--}}
                         <td>{{$val->art_editor}}</td>
+                        <td>{{$val->at_time}}</td>
                         <td>{{$val->art_view}}</td>
 
 
