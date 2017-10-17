@@ -27,15 +27,16 @@ Route::middleware(['web','admin.login'])->prefix('admin')->namespace('Admin')->g
     Route::get('index', 'IndexController@index');
 //后台模板引入info
     Route::get('info', 'IndexController@info');
-    Route::get('add', 'IndexController@add');
-    Route::get('list', 'IndexController@list');
     Route::get('tab', 'IndexController@tab');
     Route::get('img', 'IndexController@img');
     Route::get('outlogin', 'LoginController@outlogin');
     Route::any('pass','IndexController@pass');
     Route::post('cate/changeorder','CategoryController@changeOrder');
-
+    //分类列表的路由
     Route::resource('category','CategoryController');
+    //文章列表的路由
+    Route::resource('article','ArticleController');
+
 });
 Route::prefix('admin')->namespace('Admin')->group(function() {
     Route::any('login', 'LoginController@login');
