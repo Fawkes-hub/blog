@@ -36,7 +36,8 @@ Route::middleware(['web','admin.login'])->prefix('admin')->namespace('Admin')->g
     Route::resource('category','CategoryController');
     //文章列表的路由
     Route::resource('article','ArticleController');
-
+    //图片上传的路由
+    Route::any('upload', 'CommonController@upload');
 });
 Route::prefix('admin')->namespace('Admin')->group(function() {
     Route::any('login', 'LoginController@login');
