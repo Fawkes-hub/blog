@@ -3,7 +3,7 @@
     <!--面包屑导航 开始-->
     <div class="crumb_warp">
         <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
-        <i class="fa fa-home"></i> <a href="{{url('admin/info')}}">首页</a> &raquo;  添加分类列表
+        <i class="fa fa-home"></i> <a href="{{url('admin/info')}}">首页</a> &raquo;  添加文章
     </div>
     <!--面包屑导航 结束-->
 
@@ -12,12 +12,12 @@
     <!--结果集标题与导航组件 开始-->
     <div class="result_wrap">
         <div class="result_title">
-            <h3>分类管理</h3>
+            <h3>添加文章</h3>
         </div>
         <div class="result_content">
             <div class="short_wrap">
-                <a href="{{url('admin\category\create ')}}"><i class="fa fa-plus"></i>添加分类</a>
-                <a href="{{url('admin\category')}}"><i class="fa fa-recycle"></i>全部分类</a>
+                <a href="{{url('admin\article\create ')}}"><i class="fa fa-plus"></i>添加文章</a>
+                <a href="{{url('admin\article')}}"><i class="fa fa-recycle"></i>全部文章</a>
             </div>
         </div>
     </div>
@@ -94,16 +94,16 @@
                     </tr>
 
                     <tr>
-                        <th>文章描述：</th>
+                        <th><i class="require">*</i>文章描述：</th>
                         <td>
-                            <textarea name="art_description"></textarea>
+                            <textarea name="art_description" data-rule-required="true"></textarea>
                         </td>
                     </tr>
                     <tr>
-                        <th>封面缩略图：</th>
+                        <th> <i class="require">*</i>封面缩略图：</th>
                         <td>
-                            <input type="text" size="50" name="art_thumb">
-                            <input id="file_upload" name="file_upload" type="file" multiple="true">
+                            <input type="text" size="50" name="art_thumb" data-rule-required="true">
+                            <input id="file_upload" name="file_upload" type="file" multiple="true" >
                             <script src="{{asset('resources/org/uploadify/jquery.uploadify.min.js')}}" type="text/javascript"></script>
                             <link rel="stylesheet" type="text/css" href="{{asset('resources/org/uploadify/uploadify.css')}}">
                             <script type="text/javascript">
@@ -164,4 +164,7 @@ $(function() {
             </table>
         </form>
     </div>
+
+
+
 @endsection
