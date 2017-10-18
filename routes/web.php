@@ -14,9 +14,11 @@
 
 
 //前台页面
+Route::get('/', 'Home\IndexController@index');
 
-Route::namespace('Home')->group(function() {
-    Route::get('/', 'IndexController@index');
+Route::prefix('home')->namespace('Home')->group(function() {
+
+    Route::get('blog', 'IndexController@blog');
 });
 
 

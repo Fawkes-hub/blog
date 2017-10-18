@@ -46,6 +46,32 @@
 
 </head>
     <body>
+    <div id="fh5co-page">
+        <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+        <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
+
+            <h1 id="fh5co-logo"><a href="index.html">Marble</a></h1>
+            <nav id="fh5co-main-menu" role="navigation">
+                <ul>
+                    <li class="fh5co-active"><a href="index.html">首页</a></li>
+                    <li><a href="{{url('home/blog')}}">列表</a></li>
+                    <li><a href="portfolio.html">图片模式</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                </ul>
+            </nav>
+
+            <div class="fh5co-footer">
+                <p>Copyright &copy; 2017.Company name All rights reserved.</p>
+                <ul>
+                    <li><a href="#"><i class="icon-facebook2"></i></a></li>
+                    <li><a href="#"><i class="icon-twitter2"></i></a></li>
+                    <li><a href="#"><i class="icon-instagram"></i></a></li>
+                    <li><a href="#"><i class="icon-linkedin2"></i></a></li>
+                </ul>
+            </div>
+
+        </aside>
 @section('main')
 
 
