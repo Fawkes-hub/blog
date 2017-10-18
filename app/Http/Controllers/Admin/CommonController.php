@@ -12,13 +12,16 @@ class CommonController extends Controller
 
     public function upload(Request $request){
 
-        if($request->hasFile('file')){
-            echo 'y';
-        }else{
-            echo 'n';
+        //用来做文件上传的处理
+        $file = $request->file('Filedata');
+        if($file -> isValid()){
+            $entension = $file -> getClientOriginalExtension(); //上传文件的后缀.
+            $newName = date('YmdHis').mt_rand(100,999).'.'.$entension;
+            $path = $file -> move(base_path().'/uploads',$newName);
+            $filepath = 'uploads/'.$newName;
+           // echo $filepath;
+            return $filepath;
         }
-        $file = $request->file('file');
-        dd($file);
 
 
 

@@ -11,12 +11,14 @@
 |
 */
 
- Route::get('/', function () {
-     return view('welcome');
- });
 
 
-Route::get('/test','IndexController@index');
+//前台页面
+
+Route::namespace('Home')->group(function() {
+    Route::get('/', 'IndexController@index');
+});
+
 
 
 
@@ -43,9 +45,9 @@ Route::prefix('admin')->namespace('Admin')->group(function() {
     Route::any('login', 'LoginController@login');
     Route::any('code', 'LoginController@code'); //验证码
     Route::get('outlogin', 'LoginController@outlogin');
-    Route::get('uploads', function () {
-        return view('uploads');
-    });
     //Route::get('ses','LoginController@ses');
 });
+
+
+
 

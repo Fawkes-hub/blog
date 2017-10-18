@@ -17,8 +17,8 @@
         </div>
         <div class="result_content">
             <div class="short_wrap">
-                <a href="{{url('admin\article\create ')}}"><i class="fa fa-plus"></i>添加分类</a>
-                <a href="{{url('admin\article')}}"><i class="fa fa-recycle"></i>全部分类</a>
+                <a href="{{url('admin\article\create ')}}"><i class="fa fa-plus"></i>添加文章</a>
+                <a href="{{url('admin\article')}}"><i class="fa fa-recycle"></i>全部文章</a>
             </div>
         </div>
     </div>
@@ -58,9 +58,10 @@
                         <th class="tc" width="5%">ID</th>
                         {{--<th class="tc" width="">分类名称</th>--}}
                         <th >文章标题</th>
+                        <th width="30%">封面缩略图</th>
                         <th width="10%">作者</th>
                         {{--<th width="">文章描述</th>--}}
-                        {{--<th width="">封面缩略图</th>--}}
+
                         {{--<th width="">主要内容</th>--}}
                         <th width="10%">发布时间</th>
                         <th width="8%">查看次数</th>
@@ -69,27 +70,24 @@
                     @foreach($data as $val)
                     <tr>
 
-
-                        {{--<td class="tc">--}}
-                            {{--this能够把自己的值传送--}}
-                            {{--<input type="text" onchange="changeOrder(this,{{$val->cate_id}})" value="{{$val->cate_order}}" style="width: 40px">--}}
-                        {{--</td>--}}
                         <td class="tc">{{$val->art_id}}</td>
-                        {{--<td class="tc">{{$val->cate_id}}</td>--}}
+
                         <td>
                             <a href="#">{{$val->art_title}}</a>
                         </td>
-                        {{--<td>{{$val->art_description}}</td>--}}
-                        {{--<td>{{$val->art_thumb}}</td>--}}
-                        {{--<td>{{$val->art_content}}</td>--}}
+                        <td>
+                            <img src="\{{$val->art_thumb}}" alt="" height="100px">
+                        </td>
                         <td>{{$val->art_editor}}</td>
-                        <td>{{$val->at_time}}</td>
+
+
+                        <td>{{date('Y-m-d',$val->art_time)}}</td>
                         <td>{{$val->art_view}}</td>
 
 
                         <td>
-                            <a href="{{url('admin/category/'.$val->cate_id.'/edit')}}">修改</a>
-                            <a href="javascript:;"  onclick="delCate({{$val->cate_id}})" >删除</a>
+                            <a href="{{url('admin/article/'.$val->art_id.'/edit')}}">修改</a>
+                            <a href="javascript:;"  onclick="delCate({{$val->art_id}})" >删除</a>
                         </td>
                     @endforeach
                     </tr>
@@ -121,7 +119,7 @@
                 btn: ['确认','取消'] //按钮
             }, function(){
                 //alert(id);
-                $.post("{{url('admin/category/')}}/"+id,{'_token':'{{csrf_token()}}','_method':'delete'},function (data){
+                $.post("{{url('admin/article/')}}/"+id,{'_token':'{{csrf_token()}}','_method':'delete'},function (data){
                     if(data.status==0){
                         location.href =  location.href;
                         layer.msg(data.msg, {icon: 6});
@@ -141,4 +139,28 @@
     </script>
 
 
+                <div class="page_list">
+                    {{ $data->links() }}
+                    {{--<ul>--}}
+                        {{--<li class="disabled"><a href="#">&laquo;</a></li>--}}
+                        {{--<li class="active"><a href="#">1</a></li>--}}
+                        {{--<li><a href="#">2</a></li>--}}
+                        {{--<li><a href="#">3</a></li>--}}
+                        {{--<li><a href="#">4</a></li>--}}
+                        {{--<li><a href="#">5</a></li>--}}
+                        {{--<li><a href="#">&raquo;</a></li>--}}
+                    {{--</ul>--}}
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!--搜索结果页面 列表 结束-->
+    <style>
+        .result_content ul li span{
+        font-size: 15px;
+        padding: 6px 12px;
+    </style>
+
 @endsection
+
