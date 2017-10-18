@@ -103,33 +103,7 @@
                         <th>封面缩略图：</th>
                         <td>
                             <input type="file" size="50" name="file" >
-                            <input type="text" size="50" name="file" >
-                            <input id="file_upload" name="file" type="file" multiple="true">
-                            <script src="{{asset('resources/org/uploadify/jquery.uploadify.min.js')}}" type="text/javascript"></script>
-                            <link rel="stylesheet" type="text/css" href="{{asset('resources/org/uploadify/uploadify.css')}}">
-                            <script type="text/javascript">
 
-                                <?php $timestamp = time();?>
-                                $(function() {
-                                    $('#file_upload').uploadify({
-                                        'buttonText' : '图片上传',
-                                        'formData'     : {
-                                            'timestamp' : '<?php echo $timestamp;?>',
-                                            '_token'     : "{{csrf_token()}}",
-                                            'fileObjName' :'file' ,
-                                },
-                                        'swf'      : "{{asset('resources/org/uploadify/uploadify.swf')}}",
-                                        'uploader' : "{{url('admin/upload')}}",
-//                                        'onUploadSuccess' : function(file, data, response) {
-//                                            $('input[name=art_thumb]').val(data);
-//                                            $('#art_thumb_img').attr('src','/'+data);
-////                                    alert(data);
-//                                        }
-                                    });
-
-                                });
-
-                            </script>
                             <style>
                                 .uploadify{display:inline-block;}
                                 .uploadify-button{border:none; border-radius:5px; margin-top:8px;}
