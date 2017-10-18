@@ -1,6 +1,6 @@
 @extends('layouts.home')
-@section('main')
 
+@section('main')
 	<div id="fh5co-page">
 		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
 		<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
@@ -32,49 +32,49 @@
 			<aside id="fh5co-hero" class="js-fullheight">
 				<div class="flexslider js-fullheight">
 					<ul class="slides">
-				   	<li style="background-image: url({{asset('resources\views\home\style\images\img_bg_1.jpg')}});">
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
-					   				<div class="slider-text-inner">
-					   					<h1>Intuitive <strong></strong> is How Give We the User New Superpowers</h1>
+						<li style="background-image: url({{asset('resources/views/home/style/images/img_bg_1.jpg')}});">
+							<div class="overlay"></div>
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
+										<div class="slider-text-inner">
+											<h1>Intuitive <strong></strong> is How Give We the User New Superpowers</h1>
 											<p><a class="btn btn-primary btn-demo popup-vimeo" href=""> <i class="icon-monitor"></i> Live Preview</a> <a class="btn btn-primary btn-learn">Learn More<i class="icon-arrow-right3"></i></a></p>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>
-				   	<li style="background-image: url({{asset('resources\views\home\style\images\img_bg_2.jpg')}});">
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
-					   				<div class="slider-text-inner">
-					   					<h1>We are Happy to Create Newest Modern Websites</h1>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li style="background-image: url({{asset('resources/views/home/style/images/img_bg_2.jpg')}});">
+							<div class="overlay"></div>
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
+										<div class="slider-text-inner">
+											<h1>We are Happy to Create Newest Modern Websites</h1>
 											<p><a class="btn btn-primary btn-demo popup-vimeo" href="#"> <i class="icon-monitor"></i> Live Preview</a> <a class="btn btn-primary btn-learn">Learn More<i class="icon-arrow-right3"></i></a></p>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>
-				   	<li style="background-image: url({{asset('resources\views\home\style\images\img_bg_3.jpg')}});">
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
-					   				<div class="slider-text-inner">
-					   					<h1>Download our Free HTML5 Bootstrap Template</h1>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li style="background-image: url({{asset('resources/views/home/style/images/img_bg_3.jpg')}});">
+							<div class="overlay"></div>
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
+										<div class="slider-text-inner">
+											<h1>Download our Free HTML5 Bootstrap Template</h1>
 											<p><a class="btn btn-primary btn-demo popup-vimeo" href=""> <i class="icon-monitor"></i> Live Preview</a> <a class="btn btn-primary btn-learn">Learn More<i class="icon-arrow-right3"></i></a></p>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>
-				  	</ul>
-			  	</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
 			</aside>
-			
+
 			<div class="fh5co-narrow-content">
 				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Services</h2>
 				<div class="row">
@@ -130,7 +130,7 @@
 				<div class="row row-bottom-padded-md">
 					<div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
 						<div class="blog-entry">
-							<a href="#" class="blog-img"><img src="{{asset('resources\views\home\style\images/img-1.jpg')}}" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+							<a href="#" class="blog-img"><img src="{{asset('resources/views/home/style/images/img-1.jpg')}}" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
 							<div class="desc">
 								<h3><a href="#">Inspirational Website</a></h3>
 								<span><small>by Admin </small> / <small> Web Design </small> / <small> <i class="icon-comment"></i> 14</small></span>
@@ -141,7 +141,7 @@
 					</div>
 					<div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
 						<div class="blog-entry">
-							<a href="#" class="blog-img"><img src="{{asset('resources\views\home\style\images/img-2.jpg')}}" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+							<a href="#" class="blog-img"><img src="{{asset('resources/views/home/style/images/img-2.jpg')}}" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
 							<div class="desc">
 								<h3><a href="#">Inspirational Website</a></h3>
 								<span><small>by Admin </small> / <small> Web Design </small> / <small> <i class="icon-comment"></i> 14</small></span>
@@ -152,7 +152,7 @@
 					</div>
 					<div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
 						<div class="blog-entry">
-							<a href="#" class="blog-img"><img src="{{asset('resources\views\home\style\images/img-3.jpg')}}" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+							<a href="#" class="blog-img"><img src="{{asset('resources/views/home/style/images/img-3.jpg')}}" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
 							<div class="desc">
 								<h3><a href="#">Inspirational Website</a></h3>
 								<span><small>by Admin </small> / <small> Web Design </small> / <small> <i class="icon-comment"></i> 14</small></span>
@@ -163,7 +163,7 @@
 					</div>
 					<div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
 						<div class="blog-entry">
-							<a href="#" class="blog-img"><img src="{{asset('resources\views\home\style\images/img-4.jpg')}}" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+							<a href="#" class="blog-img"><img src="{{asset('resources/views/home/style/images/img-4.jpg')}}" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
 							<div class="desc">
 								<h3><a href="#">Inspirational Website</a></h3>
 								<span><small>by Admin </small> / <small> Web Design </small> / <small> <i class="icon-comment"></i> 14</small></span>
@@ -187,11 +187,12 @@
 							<p class="fh5co-lead">Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
 							<p><a href="#" class="btn btn-primary">Learn More</a></p>
 						</div>
-						
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	@endsection
 
 
