@@ -69,7 +69,7 @@
                     <tr>
                         <th width="120"><i class="require">*</i>分类名称：</th>
                         <td>
-                            <select name="cate_pid">
+                            <select name="cate_id">
 
                                 @foreach($data as $val)
                                 <option value="{{$val->cate_id}}">{{$val->_cate_name}}</option>
@@ -96,7 +96,7 @@
                     <tr>
                         <th>文章描述：</th>
                         <td>
-                            <textarea name="art_content"></textarea>
+                            <textarea name="art_description"></textarea>
                         </td>
                     </tr>
                     <tr>

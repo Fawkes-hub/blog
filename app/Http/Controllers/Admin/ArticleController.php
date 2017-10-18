@@ -52,8 +52,16 @@ class ArticleController extends CommonController
     public function store(Request $request)
     {
         //
-        $inp=$request->all();
-        dd($inp);
+        $inp=$request->except('_token');
+
+        $article=Article::create($inp);
+        if($article){
+            echo 'yes';
+            //return redirect('admin/article')->with('msg','A');
+        }else{
+            echo 'no';
+//            return back()->with('msg','B');
+        }
     }
 
     /**
