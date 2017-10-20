@@ -54,10 +54,10 @@
             <nav id="fh5co-main-menu" role="navigation">
                 <ul>
                     <li class="fh5co-active"><a href="{{url('/')}}">首页</a></li>
-                    <li><a href="{{url('home/list')}}">列表</a></li>
-                    <li><a href="portfolio.html">图片模式</a></li>
-                    <li><a href="about.html">关于我们</a></li>
-                    <li><a href="contact.html">联系我们</a></li>
+                    <li><a href="{{url('home/list')}}">文章列表</a></li>
+                    {{--<li><a href="portfolio.html">图片模式</a></li>--}}
+                    {{--<li><a href="about.html">关于我们</a></li>--}}
+                    {{--<li><a href="contact.html">联系我们</a></li>--}}
                 </ul>
             </nav>
 

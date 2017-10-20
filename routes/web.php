@@ -20,6 +20,7 @@ Route::get('/', 'Home\IndexController@index');
 Route::prefix('home')->namespace('Home')->group(function() {
 
     Route::resource('list', 'ListController');
+
 });
 
 

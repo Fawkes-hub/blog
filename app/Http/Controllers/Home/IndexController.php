@@ -28,9 +28,6 @@ class IndexController extends CommonController
         return view('home.list.index')->with('data',$data);
 
     }
-    public function blog(){
-        //引入前台页面
 
-    }
 
 }

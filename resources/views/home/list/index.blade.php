@@ -15,7 +15,7 @@
 									<div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
 										<div class="slider-text-inner">
 											<h1>{{$val->art_title}}</h1>
-											<p><a class="btn btn-primary btn-demo popup-vimeo" href="{{url('home/list/'.$val->cate_id)}}"><i class="icon-monitor">{{$val->cate_name}}</i></a> <a class="btn btn-primary btn-learn">查看详情<i class="icon-arrow-right3"></i></a></p>
+											<p> <a class="btn btn-primary btn-learn" href="{{url('home/list/'.$val->art_id)}}">查看全文<i class="icon-arrow-right3"></i></a></p>
 										</div>
 									</div>
 								</div>
@@ -27,56 +27,7 @@
 				</div>
 			</aside>
 
-		{{--	<div class="fh5co-narrow-content">
-				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Services</h2>
-				<div class="row">
-					<div class="col-md-6">
-						<div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
-							<div class="fh5co-icon">
-								<i class="icon-settings"></i>
-							</div>
-							<div class="fh5co-text">
-								<h3>Strategy</h3>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
-							<div class="fh5co-icon">
-								<i class="icon-search4"></i>
-							</div>
-							<div class="fh5co-text">
-								<h3>Explore</h3>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-							</div>
-						</div>
-					</div>
 
-					<div class="col-md-6">
-						<div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
-							<div class="fh5co-icon">
-								<i class="icon-paperplane"></i>
-							</div>
-							<div class="fh5co-text">
-								<h3>Direction</h3>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
-							<div class="fh5co-icon">
-								<i class="icon-params"></i>
-							</div>
-							<div class="fh5co-text">
-								<h3>Expertise</h3>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>--}}
 			<div class="fh5co-narrow-content">
 				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">最新新闻</h2>
 				<div class="row row-bottom-padded-md">
@@ -89,7 +40,7 @@
 								<h3 ><a href="#" style="height: 33px;overflow: hidden">{{$val->art_title}}</a></h3>
 								<span><small>{{$val->cate_name}}</small><br/><small>{{$val->art_editor}}</small> / <small> <i class="icon-comment"></i>{{date('Y-m-d',$val->art_time)}}</small></span>
 								<p style="height: 120px;overflow:hidden">{{$val->art_description}}</p>
-								<a href="{{url('admin/article/')}}" class="lead">查看全文 <i class="icon-arrow-right3"></i></a>
+								<a href="{{url('home/list/'.$val->art_id)}}" class="lead">查看全文 <i class="icon-arrow-right3"></i></a>
 
 							</div>
 						</div>
