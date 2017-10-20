@@ -7,50 +7,27 @@
 			<aside id="fh5co-hero" class="js-fullheight">
 				<div class="flexslider js-fullheight">
 					<ul class="slides">
-						<li style="background-image: url({{asset('resources/views/home/style/images/img_bg_1.jpg')}});">
+						@foreach($data as $val)
+						<li style="background-image: url({{asset($val->art_thumb)}});">
 							<div class="overlay"></div>
 							<div class="container-fluid">
 								<div class="row">
 									<div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
 										<div class="slider-text-inner">
-											<h1>Intuitive <strong></strong> is How Give We the User New Superpowers</h1>
-											<p><a class="btn btn-primary btn-demo popup-vimeo" href=""> <i class="icon-monitor"></i> Live Preview</a> <a class="btn btn-primary btn-learn">Learn More<i class="icon-arrow-right3"></i></a></p>
+											<h1>{{$val->art_title}}</h1>
+											<p><a class="btn btn-primary btn-demo popup-vimeo" href="{{url('home/list/'.$val->cate_id)}}"><i class="icon-monitor">{{$val->cate_name}}</i></a> <a class="btn btn-primary btn-learn">查看详情<i class="icon-arrow-right3"></i></a></p>
 										</div>
 									</div>
 								</div>
 							</div>
 						</li>
-						<li style="background-image: url({{asset('resources/views/home/style/images/img_bg_2.jpg')}});">
-							<div class="overlay"></div>
-							<div class="container-fluid">
-								<div class="row">
-									<div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
-										<div class="slider-text-inner">
-											<h1>We are Happy to Create Newest Modern Websites</h1>
-											<p><a class="btn btn-primary btn-demo popup-vimeo" href="#"> <i class="icon-monitor"></i> Live Preview</a> <a class="btn btn-primary btn-learn">Learn More<i class="icon-arrow-right3"></i></a></p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li style="background-image: url({{asset('resources/views/home/style/images/img_bg_3.jpg')}});">
-							<div class="overlay"></div>
-							<div class="container-fluid">
-								<div class="row">
-									<div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
-										<div class="slider-text-inner">
-											<h1>Download our Free HTML5 Bootstrap Template</h1>
-											<p><a class="btn btn-primary btn-demo popup-vimeo" href=""> <i class="icon-monitor"></i> Live Preview</a> <a class="btn btn-primary btn-learn">Learn More<i class="icon-arrow-right3"></i></a></p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</li>
+						@endforeach
+
 					</ul>
 				</div>
 			</aside>
 
-			<div class="fh5co-narrow-content">
+		{{--	<div class="fh5co-narrow-content">
 				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Services</h2>
 				<div class="row">
 					<div class="col-md-6">
@@ -99,22 +76,26 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>--}}
 			<div class="fh5co-narrow-content">
-				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Recent Blog</h2>
+				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">最新新闻</h2>
 				<div class="row row-bottom-padded-md">
+
+					@foreach($data as $val)
 					<div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
 						<div class="blog-entry">
-							<a href="#" class="blog-img"><img src="{{asset('resources/views/home/style/images/img-1.jpg')}}" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+							<a href="#" class="blog-img"><img src="{{asset($val->art_thumb)}}" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
 							<div class="desc">
-								<h3><a href="#">Inspirational Website</a></h3>
-								<span><small>by Admin </small> / <small> Web Design </small> / <small> <i class="icon-comment"></i> 14</small></span>
-								<p>Design must be functional and functionality must be translated into visual aesthetics</p>
-								<a href="#" class="lead">Read More <i class="icon-arrow-right3"></i></a>
+								<h3 ><a href="#" style="height: 33px;overflow: hidden">{{$val->art_title}}</a></h3>
+								<span><small>{{$val->cate_name}}</small><br/><small>{{$val->art_editor}}</small> / <small> <i class="icon-comment"></i>{{date('Y-m-d',$val->art_time)}}</small></span>
+								<p style="height: 120px;overflow:hidden">{{$val->art_description}}</p>
+								<a href="{{url('admin/article/')}}" class="lead">查看全文 <i class="icon-arrow-right3"></i></a>
+
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
+					@endforeach
+					{{--<div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
 						<div class="blog-entry">
 							<a href="#" class="blog-img"><img src="{{asset('resources/views/home/style/images/img-2.jpg')}}" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
 							<div class="desc">
@@ -146,7 +127,7 @@
 								<a href="#" class="lead">Read More <i class="icon-arrow-right3"></i></a>
 							</div>
 						</div>
-					</div>
+					</div>--}}
 				</div>
 			</div>
 
@@ -160,7 +141,7 @@
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
 							<p class="fh5co-lead">Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-							<p><a href="#" class="btn btn-primary">Learn More</a></p>
+							<p><a href="#" class="btn btn-primary">查看更多</a></p>
 						</div>
 
 					</div>

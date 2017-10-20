@@ -50,11 +50,11 @@
         <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
         <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
 
-            <h1 id="fh5co-logo"><a href="index.html">Marble</a></h1>
+            <h1 id="fh5co-logo"><a href="index.html">资讯中心</a></h1>
             <nav id="fh5co-main-menu" role="navigation">
                 <ul>
-                    <li class="fh5co-active"><a href="index.html">首页</a></li>
-                    <li><a href="{{url('home/blog')}}">列表</a></li>
+                    <li class="fh5co-active"><a href="{{url('/')}}">首页</a></li>
+                    <li><a href="{{url('home/list')}}">列表</a></li>
                     <li><a href="portfolio.html">图片模式</a></li>
                     <li><a href="about.html">关于我们</a></li>
                     <li><a href="contact.html">联系我们</a></li>

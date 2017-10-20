@@ -12,5 +12,9 @@ class IndexController extends Controller
     	$pdo=DB::connection()->getPdo();
    		dd($pdo);
     }
-    
+
+    public function show(){
+
+    }
+
 }

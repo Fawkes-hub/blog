@@ -154,7 +154,7 @@ $(function() {
                             <script type="text/javascript" charset="utf-8" src="{{asset('resources\org\ueditor\ueditor.config.js')}}"></script>
                             <script type="text/javascript" charset="utf-8" src="{{asset('resources\org\ueditor\ueditor.all.min.js')}}"> </script>
                             <script type="text/javascript" charset="utf-8" src="{{asset('resources\org\ueditor\lang/zh-cn/zh-cn.js')}}"></script>
-                            <script id="editor" type="text/plain" style="width:860px;height:500px;" name="art_content" >{!! $art->art_content !!}</script>
+                            <script id="editor" type="text/plain" style="width:860px;height:500px;" name="art_content" >{!!$art->art_content!!}</script>
 
                             <script type="text/javascript">
 
